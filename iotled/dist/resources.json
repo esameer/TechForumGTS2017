@@ -1,0 +1,45 @@
+{
+    "resources": [
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/main.controller.js"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "utils/IOT.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "view/main.view.xml"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

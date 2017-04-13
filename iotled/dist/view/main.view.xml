@@ -1,0 +1,48 @@
+<mvc:View xmlns:l="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="vspiotled.controller.main" displayBlock="true">
+	<App id="main">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<l:VerticalLayout class="sapUiContentPadding">
+						<l:content>
+							<Label text="Switch On/Off:" labelFor="__switch0"/><Switch id="__switch0" change="onSwitch"/>
+							<Button text="Get Current State" width="150px" id="__button0" press="onPress"/>
+						</l:content>
+					</l:VerticalLayout>
+					<l:VerticalLayout class="sapUiContentPadding"  width="100%">
+						<l:content>
+							<Label text="Current State of CapsLock:" labelFor="__switch0"/>
+							<Text id="txtCapsLock" text="{C_LEDSTATE}"/>
+							<Label text="Timestamp:" labelFor="__switch0"/>
+							<Text id="txtTimeStamp" text="{C_TIMESTAMP}"/>
+						</l:content>
+						<l:content>
+							<Table visible="true" id="table" updateFinished="onUpdateDone" fixedLayout="true" items="{path:'/T_IOT_9658E7591BA1F6500040',sorter : { path : 'C_TIMESTAMP', descending : true },length : '1',parameters: '$top=10'}" width="auto" class="sapUiResponsiveMargin" growingScrollToLoad="false" growing="false">
+								<columns>
+									<Column id="nameColumn">
+										<Text text="Time Stamp" id="nameColumnTitle"/>
+									</Column>
+									<Column id="unitNumberColumn" hAlign="End">
+										<Text text="CapLock State" id="unitNumberColumnTitle"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem modelContextChange="onModelChange">
+										<cells>
+											<ObjectIdentifier title="{C_TIMESTAMP}"/>
+											<ObjectNumber unit="{C_LEDSTATE}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+				<content>
+					<!--<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">-->
+					<!--</ScrollContainer>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
